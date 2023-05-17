@@ -50,14 +50,26 @@ const DropdownContainer = styled.div`
   left: -80px;
   width: 190px;
   height: 150px;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 10px;
+  z-index: 1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
   li {
+    margin-top: 10px;
     text-align: center;
     text-decoration-line: none;
     margin-bottom: 10px;
     padding: 5px 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #0000001a;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+      margin-right: 30px;
+    }
   }
 `;
 
@@ -74,11 +86,11 @@ function Nav() {
         <li>전예훈님, 안녕하세요!</li>
         <li>
           <ImGift />
-          상품리스트 페이지
+          &nbsp; 상품리스트 페이지
         </li>
         <li>
           <ImStarEmpty />
-          북마크 페이지
+          &nbsp; 북마크 페이지
         </li>
       </DropdownContainer>
     );
