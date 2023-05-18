@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import MainPage from "./pages/MainPage";
+import ProductList from "./components/ProductList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const AppWrapper = styled.div`
   * {
     box-sizing: border-box;
+    text-decoration: none;
 
-    color: var(--gray-900);
     font-family: "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
       Helvetica Neue, sans-serif;
@@ -15,10 +18,16 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <AppWrapper>
-      <Nav />
-      <Footer />
-    </AppWrapper>
+    <BrowserRouter>
+      <AppWrapper>
+        <Nav />
+        <Routes>
+          <Route path="/" />
+        </Routes>
+        <MainPage />
+        <Footer />
+      </AppWrapper>
+    </BrowserRouter>
   );
 }
 
